@@ -1,0 +1,71 @@
+#include<iostream>
+#include<fstream>
+#include<cstring>
+#include<conio.h>
+using namespace std;
+	 
+int main()
+{   int a;
+	char data[100];
+	string filename;
+	cout<<"Enter the preffered choice.";
+	cout<<"To write in the file press 1.";
+	cout<<"To read  file press 2.";
+	cout<<"To edit the file press 3.";
+	cout<<"To exit press 0.";
+    cin>>a;
+    switch (a)
+    {
+         	case 0:
+         		   return 1;
+         		   break;
+         	case 1:
+         		   int x;
+         		   cout<<"Enter the file name";
+                   filename=cin.get();
+                   cout<<"press enter to confirm.";
+                   getch();
+                   cout<<"\nplease choose the type of file you would like to create.";
+                   cout<<"\npress 1 for .txt";
+                   cout<<"\npress 2 for .dat";
+				   switch(x)
+				   {
+				   	        case 1:
+				   	        	   strcat(filenmae,".txt");
+				   	        	   break;
+				   	        case 2:
+				   	        	   strcat(filename,".dat");
+				   	        	   break;
+				   }
+                   ofstream fout;
+				   fout.open(filename);                 
+                   cout<<"Eneter the data to be stored.";
+	               cin.getline(data;100);
+	               getch()
+	               cout<<"Your data has been saved."
+	               fout.close();
+	               break;
+	        case 2:
+	        	   cout<<"Enter the  name of file to read.";
+	        	   filename=cin.get();
+	        	   ifstream fin;
+	        	   fin.open(filename,ios::in);
+	        	   data=fin.get();
+	        	   cout<<data;
+	        	   fin.close();
+	        	   break;
+         	case 3:
+			       cout<<"Enter the filename to edit.";
+				   filename=cin.get();
+				   ofstream fout;
+				   fout.open(filename,ios::ate|ios::app);
+				   cin.getline(data,100);
+				   getch();
+				   cout<<"Your file has been edited.";
+				   fout.close();
+				   break;
+		    default:
+		    	    cout<<"Wrong choice.";
+	}
+	return(0);	
+}
