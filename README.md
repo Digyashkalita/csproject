@@ -66,7 +66,7 @@ int main()
 				   fout.close();
 				   break;
 		    default:
-		    	    cout<<"Wrong choice.";
+		    	    cout<<"Wrong  choice.";
 	}
 	return(0);	
 }
